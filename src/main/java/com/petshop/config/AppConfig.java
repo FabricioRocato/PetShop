@@ -27,7 +27,7 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
 @Configuration
 @EnableWebMvc
 @EnableTransactionManagement
-@ComponentScan("com.petshop.config")
+@ComponentScan("com.petshop")
 @PropertySource({ "classpath:persistence-mysql.properties" })
 public class AppConfig implements WebMvcConfigurer {
 

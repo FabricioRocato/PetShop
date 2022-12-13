@@ -1,6 +1,7 @@
-package com.petshop.entity;
+package com.petshop.entityA;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "veterinario")
@@ -18,8 +19,15 @@ private String email;
 @Column(name = "license")
 private int license;
 
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "veterinario_id")
+    private Set<Agendamento> agendamentos;
+
+
 public Veterinario(){
 }
+
+
     public Veterinario(String name, String cellphone, String email, int license) {
         this.name = name;
         this.cellphone = cellphone;
@@ -65,6 +73,14 @@ public Veterinario(){
 
     public void setLicense(int license) {
         this.license = license;
+    }
+
+    public Set<Agendamento> getAgendamentos() {
+        return agendamentos;
+    }
+
+    public void setAgendamentos(Set<Agendamento> agendamentos) {
+        this.agendamentos = agendamentos;
     }
 
     @Override

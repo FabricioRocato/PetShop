@@ -1,10 +1,10 @@
-package com.petshop.entity;
+package com.petshop.entityA;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "agendamentos")
-public class Agendamentos {
+public class Agendamento {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,12 +26,12 @@ public class Agendamentos {
     @Column(name = "horario")
     private String horario;
 
-    public Agendamentos(){
+    public Agendamento(){
     }
 
-    public Agendamentos(int veterinario_id, int client_id, String data, String horario) {
-        this.veterinario_id = veterinario_id;
-        this.client_id = client_id;
+    public Agendamento(Veterinario veterinario, Client client, String data, String horario) {
+        this.veterinario = veterinario;
+        this.client = client;
         this.data = data;
         this.horario = horario;
     }
@@ -44,20 +44,20 @@ public class Agendamentos {
         this.id = id;
     }
 
-    public int getVeterinario_id() {
-        return veterinario_id;
+    public Veterinario getVeterinario() {
+        return veterinario;
     }
 
-    public void setVeterinario_id(int veterinario_id) {
-        this.veterinario_id = veterinario_id;
+    public void setVeterinario(Veterinario veterinario) {
+        this.veterinario = veterinario;
     }
 
-    public int getClient_id() {
-        return client_id;
+    public Client getClient() {
+        return client;
     }
 
-    public void setClient_id(int client_id) {
-        this.client_id = client_id;
+    public void setClient(Client client) {
+        this.client = client;
     }
 
     public String getData() {
@@ -78,10 +78,10 @@ public class Agendamentos {
 
     @Override
     public String toString() {
-        return "Agendamentos{" +
+        return "Agendamento{" +
                 "id=" + id +
-                ", veterinario_id=" + veterinario_id +
-                ", client_id=" + client_id +
+                ", veterinario=" + veterinario +
+                ", client=" + client +
                 ", data='" + data + '\'' +
                 ", horario='" + horario + '\'' +
                 '}';

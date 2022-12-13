@@ -1,13 +1,10 @@
-package com.petshop.entity;
+package com.petshop.entityA;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "pet")
 public class Pet {
-
-public Pet(){
-}
 
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,10 +16,12 @@ private String petType;
 private String Breed;
 @Column(name = "name")
 private String Name;
-@ManyToOne(cascade = {CascadeType.PERSIST,CascadeType.MERGE,
-                      CascadeType.DETACH, CascadeType.REFRESH})
+@ManyToOne(cascade = {CascadeType.ALL})
 @JoinColumn(name = "owner_id")
 private Client client;
+
+    public Pet(){
+    }
 
     public Pet(String petType, String breed, String name, Client client) {
         this.petType = petType;
@@ -71,14 +70,6 @@ private Client client;
         this.client = client;
     }
 
-    @Override
-    public String toString() {
-        return "Pet{" +
-                "id=" + id +
-                ", petType='" + petType + '\'' +
-                ", Breed='" + Breed + '\'' +
-                ", Name='" + Name + '\'' +
-                ", client=" + client +
-                '}';
-    }
+
+
 }

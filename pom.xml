@@ -2,8 +2,8 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.beerstop.springdemo</groupId>
-	<artifactId>spring-crud-rest</artifactId>
+	<groupId>com.petshop</groupId>
+	<artifactId>spring-crud</artifactId>
 	<version>1.0.0</version>
 	<packaging>war</packaging>
 
@@ -89,17 +89,29 @@
             <artifactId>lombok</artifactId>
             <version>1.18.24</version>
         </dependency>
+
+		<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>2.3.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.24</version>
+		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
 
+
 	</dependencies>
 
 	<build>
 
-		<finalName>spring-crud-rest</finalName>
+		<finalName>spring-crud</finalName>
 
 		<plugins>
 			<plugin>
